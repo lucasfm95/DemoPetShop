@@ -49,8 +49,8 @@ namespace DemoPetShop.Controllers
         {
             Animal animal = new Animal( )
             {
-                NickName = "Totó",
-                Age = 5,
+                NickName = "spider man",
+                Age = 6,
                 Species = "Cachorro"
             };
 
