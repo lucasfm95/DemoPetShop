@@ -2,12 +2,17 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DemoPetShop.Repository.AnimalRepository;
+using DemoPetShop.Repository.Repository.Interface;
+using DemoPetShop.Services.Services;
+using DemoPetShop.Services.Services.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using MongoDBRepository.Repository.Context;
 
 namespace DemoPetShop
 {
@@ -30,6 +35,11 @@ namespace DemoPetShop
                  options.MinimumSameSitePolicy = SameSiteMode.None;
              } );
 
+            IConnectionFactory connectionFactory = new ConnectionFactory( "mongodb://localhost:27017" );
+
+            services.AddSingleton<IConnectionFactory>( connectionFactory );
+            services.AddSingleton<IAnimalRepository, AnimalRepository>( );
+            services.AddTransient<IAnimalService, AnimalService>( );
 
             services.AddMvc( ).SetCompatibilityVersion( CompatibilityVersion.Version_2_2 );
         }

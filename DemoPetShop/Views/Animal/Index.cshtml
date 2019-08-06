@@ -1,7 +1,19 @@
-﻿
-@{
+﻿@{
+    
     ViewData["Title"] = "Animal List";
 }
 
 <h1>Animals</h1>
+
+@{
+    List<AnimalModel> animals = ViewBag.Animals;
+    foreach ( AnimalModel item in animals )
+    {
+        <label>@item.Id</label>
+        <label>@item.NickName</label>
+        <label>@item.Age</label>
+        <label>@item.Species</label>
+        <br/>
+    }
+}
 

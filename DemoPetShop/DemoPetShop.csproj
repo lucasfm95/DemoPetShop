@@ -10,6 +10,14 @@
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.3" />
+    <PackageReference Include="MongoDBRepositoryLMartins" Version="1.0.4" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <ProjectReference Include="..\DemoPetShop.Domain\DemoPetShop.Domain.csproj" />
+    <ProjectReference Include="..\DemoPetShop.Repository\DemoPetShop.Repository.csproj" />
+    <ProjectReference Include="..\DemoPetShop.Services\DemoPetShop.Services.csproj" />
   </ItemGroup>
 
 </Project>
