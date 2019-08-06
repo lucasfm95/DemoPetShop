@@ -14,6 +14,11 @@ namespace DemoPetShop.Repository.AnimalRepository
 
         }
 
+        public void Delete( string id )
+        {
+            GetCollection( ).DeleteOne( ( a ) => a.Id == id );
+        }
+
         public Animal GetById( string p_Id )
         {
             return GetCollection( ).Find( ( a ) => a.Id == p_Id ).First( );

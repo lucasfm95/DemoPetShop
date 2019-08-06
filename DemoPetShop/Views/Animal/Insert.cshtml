@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewData["Title"] = "Insert";
+}
+
+<h1>Insert</h1>
+
+
+<form method="post" action="@Url.Action("Create", "Animal")">
+    <label>NickName</label>
+    <input id="NickName" name="NickName" type="text" />
+    <label>Species</label>
+    <input id="Species" name="Species" type="text" />
+    <label>Age</label>
+    <input id="Age" name="Age" type="text" />
+    <input type="submit" />
+</form>

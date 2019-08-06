@@ -17,6 +17,11 @@ namespace DemoPetShop.Services.Services
 
         }
 
+        public void Delete( string id )
+        {
+            m_AnimalRepository.Delete( id );
+        }
+
         public Animal GetById( string p_Id )
         {
             return m_AnimalRepository.GetById( p_Id );

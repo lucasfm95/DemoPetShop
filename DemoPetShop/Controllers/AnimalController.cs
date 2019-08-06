@@ -55,17 +55,28 @@ namespace DemoPetShop.Controllers
             return View( );
         }
 
-        public IActionResult Insert( )
+        public IActionResult Insert(  )
+        {
+            return View( );
+        }
+
+        public IActionResult Create( AnimalModel animalModel )
         {
             Animal animal = new Animal( )
             {
-                NickName = "spider man",
-                Age = 6,
-                Species = "Cachorro"
+                NickName = animalModel.NickName,
+                Age = animalModel.Age,
+                Species = animalModel.Species
             };
 
             m_AnimalService.Insert( animal );
 
+            return RedirectToAction( "Index" );
+        }
+
+        public IActionResult Delete( string id )
+        {
+            m_AnimalService.Delete( id );
             return RedirectToAction( "Index" );
         }
     }

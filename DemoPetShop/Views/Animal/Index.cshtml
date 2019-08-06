@@ -4,10 +4,16 @@
 }
 
 <h1>Animals</h1>
+@Html.ActionLink( "Add", "Insert", "Animal" )
 
 <table>
     <thead>
-
+        <tr>
+            <td>Id</td>
+            <td>NickName</td>
+            <td>Age</td>
+            <td>Species</td>
+        </tr>
     </thead>
     <tbody>
         @{
@@ -19,6 +25,7 @@
                     <td>@item.NickName</td>
                     <td>@item.Age</td>
                     <td>@item.Species</td>
+                    <td>@Html.ActionLink( "Delete", "Delete", "Animal", new { @id = item.Id } )</td>
                 </tr>
             }
         }
