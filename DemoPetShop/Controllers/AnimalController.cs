@@ -41,7 +41,17 @@ namespace DemoPetShop.Controllers
 
         public IActionResult Detail( string id )
         {
+            Animal animal = m_AnimalService.GetById( id );
 
+            AnimalModel animalModel = new AnimalModel( )
+            {
+                Id = animal.Id,
+                NickName = animal.NickName,
+                Age = animal.Age,
+                Species = animal.Species
+            };
+
+            ViewBag.Animal = animalModel;
             return View( );
         }
 

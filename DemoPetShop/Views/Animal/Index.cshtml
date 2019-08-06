@@ -5,15 +5,23 @@
 
 <h1>Animals</h1>
 
-@{
-    List<AnimalModel> animals = ViewBag.Animals;
-    foreach ( AnimalModel item in animals )
-    {
-        <label>@item.Id</label>
-        <label>@item.NickName</label>
-        <label>@item.Age</label>
-        <label>@item.Species</label>
-        <br/>
-    }
-}
+<table>
+    <thead>
+
+    </thead>
+    <tbody>
+        @{
+            List<AnimalModel> animals = ViewBag.Animals;
+            foreach ( AnimalModel item in animals )
+            {
+                <tr>
+                    <td>@Html.ActionLink( @item.Id.ToString( ), "Detail", "Animal", new { @id = item.Id } )</td>
+                    <td>@item.NickName</td>
+                    <td>@item.Age</td>
+                    <td>@item.Species</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
 

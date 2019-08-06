@@ -16,6 +16,12 @@ namespace DemoPetShop.Services.Services
             m_AnimalRepository = p_AnimalRepository;
 
         }
+
+        public Animal GetById( string p_Id )
+        {
+            return m_AnimalRepository.GetById( p_Id );
+        }
+
         public void Insert( Animal animal )
         {
             m_AnimalRepository.Insert( animal );

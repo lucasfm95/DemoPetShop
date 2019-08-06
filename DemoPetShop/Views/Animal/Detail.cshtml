@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewData["Title"] = "Detail";
+    AnimalModel animalModel = ViewBag.Animal;
+}
+
+<h1>Detail</h1>
+
+<hr />
+<div>@animalModel.Id</div>
+<div>@animalModel.NickName</div>
+<div>@animalModel.Age</div>
+<div>@animalModel.Species</div>
+
+<hr />
+@Html.ActionLink( "List Animals", "Index", "Animal" )

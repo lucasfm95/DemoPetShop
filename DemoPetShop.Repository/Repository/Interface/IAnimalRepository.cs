@@ -8,6 +8,7 @@ namespace DemoPetShop.Repository.Repository.Interface
     public interface IAnimalRepository
     {
         List<Animal> FindAll( );
+        Animal GetById( string p_Id );
         void Insert( Animal obj );
     }
 }

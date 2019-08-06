@@ -8,7 +8,8 @@ namespace DemoPetShop.Services.Services.Interfaces
     public interface IAnimalService
     {
         List<Animal> ListAll( );
-        void Insert( Animal animal );
+        Animal GetById( string p_Id);
+        void Insert( Animal p_Animal );
 
     }
 }
