@@ -13,6 +13,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using MongoDBRepository.Repository.Context;
+using Serilog;
+using Serilog.Events;
 
 namespace DemoPetShop
 {
@@ -42,6 +44,16 @@ namespace DemoPetShop
             services.AddTransient<IAnimalService, AnimalService>( );
 
             services.AddMvc( ).SetCompatibilityVersion( CompatibilityVersion.Version_2_2 );
+
+            Log.Logger = new LoggerConfiguration( )
+                .MinimumLevel.Debug( )
+                .MinimumLevel.Override( "Microsoft", LogEventLevel.Information )
+                .Enrich.FromLogContext( )
+                .WriteTo.Console( )
+                .WriteTo.File( @".\log\log.txt" )
+                .WriteTo.MongoDB( "mongodb://localhost:27017/logs", collectionName: "applog" )
+                .CreateLogger( );
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
