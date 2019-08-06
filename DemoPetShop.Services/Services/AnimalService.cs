@@ -18,7 +18,7 @@ namespace DemoPetShop.Services.Services
         }
         public void Insert( Animal animal )
         {
-            throw new NotImplementedException( );
+            m_AnimalRepository.Insert( animal );
         }
 
         public List<Animal> ListAll( )

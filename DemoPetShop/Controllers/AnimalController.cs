@@ -39,9 +39,24 @@ namespace DemoPetShop.Controllers
             return View( );
         }
 
-        public IActionResult Detail( )
+        public IActionResult Detail( string id )
         {
+
             return View( );
+        }
+
+        public IActionResult Insert( )
+        {
+            Animal animal = new Animal( )
+            {
+                NickName = "Totó",
+                Age = 5,
+                Species = "Cachorro"
+            };
+
+            m_AnimalService.Insert( animal );
+
+            return RedirectToAction( "Index" );
         }
     }
 }
